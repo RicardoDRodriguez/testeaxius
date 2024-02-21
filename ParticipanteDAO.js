@@ -48,6 +48,22 @@ class ParticipanteDAO {
 
   }
 
+  // Método para obter todos os alunos de uma sala
+async obterAlunosDaSala(sala) {
+  try {
+    console.log(`ParticipanteDAO.obterRegistrosDaSala -> Obtendo registros da sala: ${sala}`);
+
+    // Procura por todos os participantes na sala especificada
+    let registros = await ParticipanteModel.find({ sala: sala });
+
+    console.log(`ParticipanteDAO.obterRegistrosDaSala -> alunos  da sala ${sala} obtidos com sucesso.`);
+    return registros;
+  } catch (error) {
+    console.error(`ParticipanteDAO.obterRegistrosDaSala -> Erro ao obter registros da sala ${sala}:`, error);
+  }
+}
+
+
   // Método para obter a lista de salas de aula
   async obterListaDeSalas() {
     try {
