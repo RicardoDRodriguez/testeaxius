@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 (async () => {
   try {
     await
-      mongoose.connect('mongodb://localhost:27017/Tagarelas', {
+      mongoose.connect('mongodb://Ricardo:123456@localhost:27017/Tagarelas', {
         serverSelectionTimeoutMS: 5000, // Timeout de seleção de servidor em milissegundos
         socketTimeoutMS: 45000, // Timeout de socket em milissegundos
       });

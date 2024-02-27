@@ -100,7 +100,7 @@ const server = http.createServer((req, res) => {
     res.end('Hello, world!\n');
 });
 
-const PORT = 6000;
+const PORT = 3000;
 
 server.listen(PORT, () => {
     console.log(`Servidor escutando na porta ${PORT}`);
@@ -116,13 +116,13 @@ server.listen(PORT, () => {
                 participanteDAO.atualizarParticipante(participante);
             });
             console.log('### Lendo lista de salas')
-            return participanteDAO.obterListaDeSalas();
+            //return participanteDAO.obterListaDeSalas();
         })
         .then(salas =>{
             console.log ('===>>Lista de salas de aula obtidas no database:', salas)
             // Aqui você pode usar a lista de salas em sua chamada de API ou em qualquer outra parte do seu código
             // Por exemplo, você pode passar a lista de salas para sua chamada de API
-            return axios.get('http://localhost:6000/rota', { params: { salas: salas } });  
+            return axios.get('http://localhost:3000/rota', { params: { salas: salas } });  
         })
         .then(response => {
             console.log('Resposta da API:', response.data);
